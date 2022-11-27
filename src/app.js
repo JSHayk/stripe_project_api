@@ -12,7 +12,7 @@ const app = express();
 // MiddleWares
 app.use(express.json()); // Sending json data
 app.use(express.urlencoded({ extended: true })); // Sending FormData
-app.use(cors({ origin: "http://localhost:3000", credentials: true })); // Allowing access for client url
+app.use(cors({ origin: appConfig.client_url, credentials: true })); // Allowing access for client url
 app.use("/api", router); // Switching Routes by /api
 
 // App Configuration
